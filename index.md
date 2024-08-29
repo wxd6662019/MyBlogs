@@ -3,7 +3,11 @@ title: Welcome to my blog
 theme: jekyll-theme-cayman
 ---
 
-# I Like U      
+## I Like U
+<link rel="stylesheet" href="./main.css">
+<p class="intro">This is a space where I share my thoughts, ideas, and projects.</p>
+
+
 ![banner](./assets/banner.png)
 
 
