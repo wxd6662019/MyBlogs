@@ -1,5 +1,14 @@
-#main-content {
-  font-size: 36px;
-  font-weight: bold;
-  padding: 16px;
+.blog-title {
+    text-align: center;
+    color: blue;
+}
+
+.intro {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.interests {
+    list-style-type: square;
+    margin-left: 20px;
 }
