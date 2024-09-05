@@ -1,6 +1,6 @@
 ---
 title: how to use ssh to connect github
-date: 2024 9 5
+date: 2024-9-5
 
 ---
 
