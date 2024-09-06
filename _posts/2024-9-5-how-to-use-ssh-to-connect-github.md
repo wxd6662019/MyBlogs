@@ -14,6 +14,11 @@ date: 2024-9-5
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+/**解析：
+-t rsa ：指定密钥类型，rsa表示使用rsa算法生成密钥
+-b 4096：指令密钥的位数，表示生成4096位的密钥
+-C “”： 表示为密钥添加注释，方便识别密钥的用途或持有者
+**/
 ```
 
 - 按照提示，选择密钥保存的位置（默认是 `~/.ssh/id_rsa`），并设置一个密码（可选）。
@@ -27,6 +32,8 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
 
+​	`ssh-agent` 的主要作用是管理 SSH 密钥，以便在需要时提供身份验证。如果代理未运行，你将无法使用 `ssh-add` 添加新密钥。关闭 `ssh-agent` 后，你将无法使用它来管理密钥。如果你尝试建立新的 SSH 连接，系统将要求你手动输入密钥密码，或者使用 `-i` 参数指定密钥
+
 ### 4. 添加 SSH 密钥到 GitHub
 
 1. **复制 SSH 密钥**：
@@ -37,15 +44,12 @@ ssh-add ~/.ssh/id_rsa
    cat ~/.ssh/id_rsa.pub
    ```
 
-   或者使用 `pbcopy`（macOS）：
-
-   ```bash
-   pbcopy < ~/.ssh/id_rsa.pub
-   ```
+   
 
 2. **登录到 GitHub**：
+   
    - 进入 [GitHub](https://github.com)，登录你的账户。
-
+   
 3. **添加 SSH 密钥**：
    - 点击右上角的个人头像，选择 **Settings**。
    - 在左侧菜单中选择 **SSH and GPG keys**。
