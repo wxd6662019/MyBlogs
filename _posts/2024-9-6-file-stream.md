@@ -1,6 +1,6 @@
 ---
-title:file stream
-date:2024-9-6
+title: file stream
+date: 2024-9-6
 
 ---
 
