@@ -8,6 +8,13 @@ date: 2024-9-5
 
 确保你的系统上已经安装了 SSH 客户端。在大多数 Linux 和 macOS 系统中，SSH 客户端已经预装。Windows 用户可以使用 Git Bash 或 Windows Subsystem for Linux (WSL)。
 
+检查您的系统中是否已生成 SSH 密钥
+
+```c
+ls -al ~/.ssh 
+    //如果 id_rsa.pub 文件存在，说明您已经生成了 SSH 密钥。
+```
+
 ### 2. 生成 SSH 密钥
 
 如果你还没有 SSH 密钥，可以通过以下命令生成一个：
@@ -32,7 +39,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
 
-​	`ssh-agent` 的主要作用是管理 SSH 密钥，以便在需要时提供身份验证。如果代理未运行，你将无法使用 `ssh-add` 添加新密钥。关闭 `ssh-agent` 后，你将无法使用它来管理密钥。如果你尝试建立新的 SSH 连接，系统将要求你手动输入密钥密码，或者使用 `-i` 参数指定密钥
+​	`ssh-agent` 的主要作用是管理 SSH 密钥，以便在需要时提供身份验证。如果代理未运行，你将无法使用 `ssh-add` 添加新密钥。关闭 `ssh-agent` 后，你将无法使用它来管理密钥。如果你尝试建立新的 SSH 连接，系统将要求你手动输入密钥密码，或者使用 `-i` 参数指定密钥，貌似会默认找id_rsa这个私钥
 
 ### 4. 添加 SSH 密钥到 GitHub
 
@@ -91,3 +98,5 @@ git push origin main
 ```
 
 将 `main` 替换为你的分支名称。
+
+### ssh-keygen -R 47.94.20.51 ，重新连接的命令，删除KnownHosts文件里这个ip的记录
